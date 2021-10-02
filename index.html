@@ -14,31 +14,41 @@
 
 <body>
   <div class="container">
-    <div class="site-header">
-      <h1>Jam Box Studios</h1>
+    <ul class="skip-links">
+      <li><a href="#site-header">Skip to main nav</a></li>
+      <li><a href="#main">Skip to main content</a></li>
+      <li><a href="#owner">Skip to owner information</a></li>
+      <li><a href="#adress">Skip to adress</a></li>
+      <li><a href="#contact">Skip to contact form</a></li>
+      </ul>
+    <div class="site-header" id="site-header">
+      <h1 role="heading">Jam Box Studios</h1>
+      <nav role="navigation">
       <div class="main-nav">
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><a href="#" aria-label="Go to the homepage">Home</a></li>
           <li><a href="#">Products</a></li>
           <li><a href="#">Reservation</a></li>
           <li><a href="#">Studio</a></li>
         </ul>
       </div>
-      <img src="https://placekitten.com/1200/900" class="banner">
+    </nav>
+      <img alt="kitten" src="https://placekitten.com/1200/900" class="banner">
     </div>
-    <div class="main-content">
+    <div class="main-content" id="main">
       <h1>Welcome to Jam Box</h1>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
-      <div class="owner">
+      <div class="owner" id="owner">
         <h1>Meet the owner</h1>
-        <ul>
-          <li>Name: John Doe</li>
-          <li>Title: CEO</li>
-          <li>Email: johnjoe@jambox.ca</li>
-          <li>Phone: 613-000-0000</li>
+        <ul itemscope itemtype="https://schema.org/Person">
+          <li itemprop="name"> John Doe</li>
+          <li itemprop="jobTitle"> CEO </li>
+          <li itemprop="email">johnjoe@jambox.ca</li>
+          <li itemprop="telephone">613-000-0000</li>
         </ul>
-        <h1>Address</h1>
+        <!-- the itemscope itemtype defines the schema we are using, with itemsprop we define which element we are referring to -->
+        <h1 id="adress">Address</h1>
         <p>
           Jambox Studios
           123 Guitar Road,
@@ -46,22 +56,27 @@
           B3T 0L0
         </p>
       </div>
-      <div class="contact-section">
+      <div class="contact-section" id="contact">
         <h1>Contact Us</h1>
         <form action="thanks.html">
           <label>Full Name</label>
           <input type="text" placeholder="Full Name">
+          <label>Email</label>
           <input type="text" placeholder="Email">
+          <label>Subject</label>
           <input type="text" placeholder="Subject">
-          <b>Your Message</b>
+          <label>Your message</label>
           <textarea></textarea>
-          <button type="submit">Send</button>
+          <button type="submit" aria-label="Submit the form">Send</button>
+          <!-- button, not input -->
         </form>
       </div>
     </div>
+    <footer role="contentinfo">
     <div class="site-footer">
-      &copy; 2021 Jam Box Studios
+      &copy; 2021 Jam Box Studios <a href="#site-header">Back to Top </a>
     </div>
+    </footer>
   </div>
 </body>
 
